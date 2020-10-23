@@ -8,9 +8,16 @@ import {LoginService} from '../Service/LoginService';
 })
 export class AdministrateurComponent implements OnInit {
 
+  navbar_filliere:number=1;
+
+
   constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
+  }
+
+  navig(n:number){
+    this.navbar_filliere=n;
   }
 
 }

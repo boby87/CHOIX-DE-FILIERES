@@ -81,6 +81,7 @@ export class LoginService {
     libelle:"EC7"
   };
 
+  public ecs:EcModule[]=[];
 
 
   module1:Module_Ec={
@@ -110,6 +111,13 @@ export class LoginService {
     this.modules.push(this.module2);
     this.modules.push(this.module3);
 
+    this.ecs.push(this.ec1);
+    this.ecs.push(this.ec2);
+    this.ecs.push(this.ec3);
+    this.ecs.push(this.ec4);
+    this.ecs.push(this.ec5);
+    this.ecs.push(this.ec6);
+    this.ecs.push(this.ec7);
   }
 
 }

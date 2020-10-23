@@ -91,3 +91,9 @@ body {
   border-radius: 0.25rem;
   display: none
 }
+
+
+img{
+  width: 25px;
+  cursor: pointer;
+}

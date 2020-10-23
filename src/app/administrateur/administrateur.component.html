@@ -1,13 +1,15 @@
 <div class="header2 bg-success-gradiant">
   <div class="">
     <!-- Header 1 code -->
-    <nav class="navbar navbar-expand-lg h2-nav"> <a class="navbar-brand" href="#">BBB</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-menu"></span> </button>
+    <nav class="navbar navbar-expand-lg h2-nav"><a class="navbar-brand" href="#">BBB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2"
+              aria-expanded="false" aria-label="Toggle navigation"><span class="icon-menu"></span></button>
       <div class="collapse navbar-collapse hover-dropdown" id="header2">
         <ul class="navbar-nav">
           <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" >filière </a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navig(1)">filière </a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navig(2)">Module</a></li>
+          <li class="nav-item"><a class="nav-link" (click)="navig(3)">Contact</a></li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a class="nav-link">{{loginService.user.username}}</a></li>
@@ -17,8 +19,8 @@
     </nav> <!-- End Header 1 code -->
   </div>
 
-  <div class="container rounded mt-5 bg-white p-md-5">
-    <div class="h2 font-weight-bold">Meetings</div>
+  <div class="container rounded mt-5 bg-white p-md-5" *ngIf="navbar_filliere==1">
+    <div class="h2 font-weight-bold"></div>
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -34,16 +36,79 @@
           <td class="pt-3 mt-1">{{m.nom_filiere}}</td>
           <td class="pt-3">{{m.nbr_person}}</td>
           <td class="pt-3">{{m.note_admition}}</td>
-          <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+          <td class="pt-3" data-toggle="modal" data-target="#exampleModal"><img src="assets/img/eye-open.svg"/></td>
         </tr>
-        <tr id="spacing-row">
-          <td></td>
-        </tr>
-
         </tbody>
       </table>
     </div>
   </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0 mb-2">
+        <h5 class="modal-title" id="exampleModalLabel">Create new Folder</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer d-flex border-0 mb-4">
+        <button type="button" class="btn cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn create">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5" *ngIf="navbar_filliere==2">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group"><label>Selectionné la filiere</label> <select
+        class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+        <option selected="selected">Filiéres</option>
+        <option *ngFor="let f of loginService.fillieres">{{f.nom_filiere}}</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label>Selectionné les modules</label>
+        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1"
+                aria-hidden="true">
+          <option selected="selected">Modules</option>
+          <option *ngFor="let m of loginService.modules">{{m.libelle}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Selectionné les Ec</label>
+        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1"
+                aria-hidden="true">
+          <option selected="selected">EC</option>
+          <option *ngFor="let e of loginService.ecs">{{e.libelle}}</option>
+        </select>
+      </div>
+    </div> <!-- /.col -->
+
+
+    <div class="col-md-6">
+      <div class="row" *ngFor="let fi of loginService.ecs">
+        <label>Selectionné la filiere</label>
+      </div>
+      <div class="form-group">
+        <label>Selectionné les modules</label>
+        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1"
+                aria-hidden="true">
+          <option selected="selected">Modules</option>
+          <option *ngFor="let m of loginService.modules">{{m.libelle}}</option>
+        </select>
+      </div>
+    </div> <
+
+  </div>
+
 
 
 </div>
