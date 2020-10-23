@@ -1,7 +1,7 @@
 <div class="header2 bg-success-gradiant">
   <div class="">
     <!-- Header 1 code -->
-    <nav class="navbar navbar-expand-lg h2-nav"><a class="navbar-brand" href="#">BBB</a>
+    <nav class="navbar navbar-expand-lg h2-nav"><a class="navbar-brand" href="#">{{loginService.user.role}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2"
               aria-expanded="false" aria-label="Toggle navigation"><span class="icon-menu"></span></button>
       <div class="collapse navbar-collapse hover-dropdown" id="header2">
@@ -67,45 +67,31 @@
 <div class="container mt-5" *ngIf="navbar_filliere==2">
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group"><label>Selectionné la filiere</label> <select
-        class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-        <option selected="selected">Filiéres</option>
-        <option *ngFor="let f of loginService.fillieres">{{f.nom_filiere}}</option>
+      <div class="form-group" >
+        <label>Selectionné la filiere</label>
+        <select class="form-control select2 select2-hidden-accessible" [(ngModel)]="fillier" style="width: 100%;">
+        <option *ngFor="let f of loginService.fillieres" [value]="f">{{f.nom_filiere}}</option>
       </select>
       </div>
-      <div class="form-group">
+      <div class="form-group" *ngIf="fillier">
         <label>Selectionné les modules</label>
-        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1"
-                aria-hidden="true">
-          <option selected="selected">Modules</option>
-          <option *ngFor="let m of loginService.modules">{{m.libelle}}</option>
+        <select class="form-control select2 select2-hidden-accessible" [(ngModel)]="module_ec" style="width: 100%;">
+          <option *ngFor="let m of loginService.modules" [value]="m">{{m.libelle}}</option>
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" *ngIf="module_ec">
         <label>Selectionné les Ec</label>
-        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1"
-                aria-hidden="true">
-          <option selected="selected">EC</option>
-          <option *ngFor="let e of loginService.ecs">{{e.libelle}}</option>
+        <select class="form-control select2 select2-hidden-accessible" [(ngModel)]="element_constitu" style="width: 100%;">
+          <option *ngFor="let e of loginService.ecs" [value]="e">{{e.libelle}}</option>
         </select>
       </div>
     </div> <!-- /.col -->
 
 
     <div class="col-md-6">
-      <div class="row" *ngFor="let fi of loginService.ecs">
-        <label>Selectionné la filiere</label>
-      </div>
-      <div class="form-group">
-        <label>Selectionné les modules</label>
-        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1"
-                aria-hidden="true">
-          <option selected="selected">Modules</option>
-          <option *ngFor="let m of loginService.modules">{{m.libelle}}</option>
-        </select>
-      </div>
-    </div> <
+
+    </div>
 
   </div>
 
