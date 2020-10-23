@@ -1,33 +1,17 @@
-<app-hearder></app-hearder>
 
-<div class="page-content page-container" id="page-content">
-  <div class="padding">
-    <div class="row container d-flex justify-content-center">
-      <div class="col-lg-8 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title text-center">Add and remove row in table using jquery</h4>
-            <hr>
-            <div class="table-responsive">
-              <table id="faqs" class="table table-hover">
-                <thead>
-                <tr>
-                  <th>INTITULE FILIERE </th>
-                  <th>NOTE MINIMALE</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let f of loginService.fillieres">
-                  <td>{{f.nom_filiere}}</td>
-                  <td>{{f.note_admition}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="text-center"><button onclick="addfaqs();" class="badge badge-success"><i class="fa fa-plus"></i> ADD NEW</button></div>
-          </div>
-        </div>
+  <div class="container-fluid">
+      <div class="form-group">
+        <label>Choisir une filliere</label>
+        <select class="form-control select2 select2-hidden-accessible" (change)="add_fillier($event)">
+          <option selected="selected">Choix</option>
+        <option *ngFor="let f of loginService.fillieres" >{{f.nom_filiere}}</option>
+      </select> </div> <!-- /.form-group --><!-- /.col -->
+      <div class="row" *ngFor="let fi of loginService.user.filliere">
+        <div class="col-md-6"><label>{{fi.nom_filiere}}</label></div>
+        <div class="col-md-3"><label>{{fi.note_admition}}</label></div>
+        <div class="col-md-3">
+          <button class="btn bg-danger" (click)="supprimer(fi)">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button></div>
       </div>
-    </div>
-  </div>
 </div>

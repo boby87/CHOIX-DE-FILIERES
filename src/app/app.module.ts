@@ -11,6 +11,10 @@ import {FormsModule} from '@angular/forms';
 import { EtudiantComponent } from './etudiant/etudiant.component';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
 import { HearderComponent } from './hearder/hearder.component';
+import {NotificationService} from './Service/NotificationService';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ModuleadminComponent } from './moduleadmin/moduleadmin.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +23,19 @@ import { HearderComponent } from './hearder/hearder.component';
     FilliereComponent,
     EtudiantComponent,
     AdministrateurComponent,
-    HearderComponent
+    HearderComponent,
+    ModuleadminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({}),
   ],
   providers: [
+    NotificationService,
     LoginService
   ],
   bootstrap: [AppComponent]
