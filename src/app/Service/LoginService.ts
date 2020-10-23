@@ -101,9 +101,15 @@ export class LoginService {
     ec:[]
   }
 
+  public modules:Module_Ec[]=[];
+
 
 
   constructor() {
+    this.modules.push(this.module1);
+    this.modules.push(this.module2);
+    this.modules.push(this.module3);
+
   }
 
 }

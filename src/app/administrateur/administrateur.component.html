@@ -16,7 +16,6 @@
       </div>
     </nav> <!-- End Header 1 code -->
   </div>
-  <app-hearder></app-hearder>
 
   <div class="container rounded mt-5 bg-white p-md-5">
     <div class="h2 font-weight-bold">Meetings</div>
@@ -26,18 +25,15 @@
         <tr>
           <th scope="col">Nom Filliere</th>
           <th scope="col">Nombre de personnes autorisés</th>
-          <th scope="col">Time</th>
+          <th scope="col">Moyenne d'admition</th>
           <th scope="col">Status</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="bg-blue">
-          <td class="pt-2"> <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="">
-            <div class="pl-lg-5 pl-md-3 pl-1 name">Emilia Kollette</div>
-          </td>
-          <td class="pt-3 mt-1">25 Sep 2020</td>
-          <td class="pt-3">11:00 AM</td>
-          <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
+        <tr class="bg-blue" *ngFor="let m of loginService.fillieres">
+          <td class="pt-3 mt-1">{{m.nom_filiere}}</td>
+          <td class="pt-3">{{m.nbr_person}}</td>
+          <td class="pt-3">{{m.note_admition}}</td>
           <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
         </tr>
         <tr id="spacing-row">

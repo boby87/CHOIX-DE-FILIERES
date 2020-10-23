@@ -1,77 +1,68 @@
 .body {
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh
+  height: 100vh;
+  background-size: cover;
+  background-position: center
 }
 
-.card {
-  width: 400px;
-  padding: 20px;
-  border: none
+.login_page {
+  width: 360px;
+  padding: 10% 0 0;
+  margin: auto
 }
 
-.account {
-  font-weight: 500;
-  font-size: 17px
+.form {
+  position: relative;
+  z-index: 1;
+  background: rgba(7, 40, 195, 0.8);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 6px
 }
 
-.contact {
-  font-size: 13px
-}
-
-.form-control {
-  text-indent: 14px
-}
-
-.form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #4a148c;
-  outline: 0;
-  box-shadow: none
-}
-
-.inputbox {
-  margin-bottom: 10px;
-  position: relative
-}
-
-.inputbox i {
-  position: absolute;
-  left: 8px;
-  top: 12px;
-  color: #dadada
-}
-
-.form-check-label {
-  font-size: 13px
-}
-
-.form-check-input {
-  width: 14px;
-  height: 15px;
-  margin-top: 5px
-}
-
-.forgot {
+.form input {
+  font-family: "Roboto", Sans-serif;
+  outline: 1;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
   font-size: 14px;
-  text-decoration: none;
-  color: #4A148C
+  border-radius: 2px
 }
 
-.mail {
-  color: #4a148c;
-  text-decoration: none
-}
-
-.form-check {
+.form button {
+  font-family: "Roboto", Sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 2;
+  border-radius: 4px;
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
   cursor: pointer
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #4A148C;
-  border-color: #4A148C
+.form button:hover,
+.form button:active {
+  background: #43A047
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: aliceblue;
+  font-size: 16px
+}
+
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none
+}
+
+.form .register_form {
+  display: none
 }
