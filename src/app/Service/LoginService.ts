@@ -9,16 +9,16 @@ export class LoginService {
   public user: Utilisateur;
   public filliere: Filliere;
   public fillieres: Filliere[] = [
-    {nom_filiere: ' Genie Qualite-Hygiene-Sécurite-Environnement industriel',note_admition:0,nbr_person:3},
-    {nom_filiere: 'Genie informatique et telecommunication',note_admition:0,nbr_person:2},
-    {nom_filiere: 'Genie maritime et portuaire',note_admition:0,nbr_person:3},
-    {nom_filiere: 'Genie des procedes',note_admition:15,nbr_person:5},
-    {nom_filiere: 'Genie civil',note_admition:12,nbr_person:2},
-    {nom_filiere: 'Genie energetique',note_admition:14,nbr_person:4},
-    {nom_filiere: 'Genie automobile et mecatronique',note_admition:11,nbr_person:13},
-    {nom_filiere: 'Genie mecanique',note_admition:12.5,nbr_person:6},
-    {nom_filiere: 'Genie physique et technologie biomedicale',note_admition:13,nbr_person:3},
-    {nom_filiere: 'Genie électrique et système intelligent.',note_admition:13,nbr_person:3},
+    {nom_filiere: ' Genie Qualite-Hygiene-Sécurite-Environnement industriel',note_admition:0,nbr_person:3,module_filere:[]},
+    {nom_filiere: 'Genie informatique et telecommunication',note_admition:0,nbr_person:2,module_filere:[]},
+    {nom_filiere: 'Genie maritime et portuaire',note_admition:0,nbr_person:3,module_filere:[]},
+    {nom_filiere: 'Genie des procedes',note_admition:15,nbr_person:5,module_filere:[]},
+    {nom_filiere: 'Genie civil',note_admition:12,nbr_person:2,module_filere:[]},
+    {nom_filiere: 'Genie energetique',note_admition:14,nbr_person:4,module_filere:[]},
+    {nom_filiere: 'Genie automobile et mecatronique',note_admition:11,nbr_person:13,module_filere:[]},
+    {nom_filiere: 'Genie mecanique',note_admition:12.5,nbr_person:6,module_filere:[]},
+    {nom_filiere: 'Genie physique et technologie biomedicale',note_admition:13,nbr_person:3,module_filere:[]},
+    {nom_filiere: 'Genie électrique et système intelligent.',note_admition:13,nbr_person:3,module_filere:[]},
 
   ];
   Utilisateurs: Utilisateur[] = [
