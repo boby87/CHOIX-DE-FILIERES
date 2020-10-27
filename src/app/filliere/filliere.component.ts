@@ -17,14 +17,14 @@ export class FilliereComponent implements OnInit {
 
   add_fillier(event: any) {
     let fillier=this.loginService.fillieres.find(f=>{return f.nom_filiere===event.target.value})
-    let index=this.loginService.user.filliere.indexOf(fillier);
+    let index=this.loginService.user.filliere_choisir.indexOf(fillier);
     if (index==-1){
-      if (this.loginService.user.filliere.length>2){
-        this.loginService.user.filliere.pop();
-        this.loginService.user.filliere.push(fillier);
+      if (this.loginService.user.filliere_choisir.length>2){
+        this.loginService.user.filliere_choisir.pop();
+        this.loginService.user.filliere_choisir.push(fillier);
 
       }else {
-        this.loginService.user.filliere.push(fillier);
+        this.loginService.user.filliere_choisir.push(fillier);
       }
     }else {
       this.notificationService.showWarning("Vous avez deja choisi cette filliere","")
@@ -34,8 +34,8 @@ export class FilliereComponent implements OnInit {
   }
 
   supprimer(fi: Filliere) {
-   let index= this.loginService.user.filliere.indexOf(fi);
-   this.loginService.user.filliere.splice(index,1);
+   let index= this.loginService.user.filliere_choisir.indexOf(fi);
+   this.loginService.user.filliere_choisir.splice(index,1);
 
   }
 }

@@ -5,5 +5,6 @@ export class Utilisateur{
   password:string;
   role:string;
   note:string;
-  filliere:Filliere[];
+  filliere_choisir:Filliere[];
+  filliere_admi:Filliere;
 }

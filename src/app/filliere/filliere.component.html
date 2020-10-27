@@ -6,7 +6,7 @@
           <option selected="selected">Choix</option>
         <option *ngFor="let f of loginService.fillieres" >{{f.nom_filiere}}</option>
       </select> </div> <!-- /.form-group --><!-- /.col -->
-      <div class="row" *ngFor="let fi of loginService.user.filliere">
+      <div class="row" *ngFor="let fi of loginService.user.filliere_choisir">
         <div class="col-md-6"><label>{{fi.nom_filiere}}</label></div>
         <div class="col-md-3"><label>{{fi.note_admition}}</label></div>
         <div class="col-md-3">

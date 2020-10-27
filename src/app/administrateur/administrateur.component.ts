@@ -15,6 +15,7 @@ export class AdministrateurComponent implements OnInit {
   choi_ec:number=0;
 
   public fillier:Filliere;
+  public fillier_admi:Filliere;
   public module_ec:Module_Ec;
   public module_ecs:Module_Ec[]=[];
   public element_constitu:EcModule;
@@ -58,5 +59,29 @@ export class AdministrateurComponent implements OnInit {
 
   add_ec(m: Module_Ec) {
     this.module_ec=m;
+  }
+
+  add_note(m: Filliere) {
+    this.fillier=m;
+  }
+
+  saveNote() {
+    let index=this.loginService.fillieres.findIndex(i=>i.nom_filiere==this.fillier.nom_filiere);
+    this.loginService.fillieres.splice(index,1);
+    this.loginService.fillieres.push(this.fillier);
+
+  }
+
+  select_etudian(u: any) {
+    let user=this.loginService.Utilisateurs.find(us=>us.username==u.target.value);
+    user.filliere_admi=this.fillier_admi;
+    console.log(this.fillier_admi)
+    this.loginService.liste_user_admin.push(user);
+  }
+
+  select_filiere_etudian(filier: any) {
+    this.fillier_admi=this.loginService.fillieres.find(m=>{
+      return m.nom_filiere==filier.target.value;
+    });
   }
 }

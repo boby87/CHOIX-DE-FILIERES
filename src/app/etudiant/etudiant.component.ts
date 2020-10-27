@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../Service/LoginService';
 
 @Component({
   selector: 'app-etudiant',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./etudiant.component.css']
 })
 export class EtudiantComponent implements OnInit {
-
-  constructor() { }
+  nav:number=1;
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
   }
 
+  navig(number: number) {
+    this.nav=number;
+  }
 }

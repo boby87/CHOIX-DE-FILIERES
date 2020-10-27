@@ -8,6 +8,7 @@ import {Module_Ec} from '../Model/Module_Ec';
 export class LoginService {
   public user: Utilisateur;
   public filliere: Filliere;
+  public liste_user_admin:Utilisateur[]=[];
   public fillieres: Filliere[] = [
     {nom_filiere: ' Genie Qualite-Hygiene-Sécurite-Environnement industriel',note_admition:0,nbr_person:3,module_filere:[]},
     {nom_filiere: 'Genie informatique et telecommunication',note_admition:0,nbr_person:2,module_filere:[]},
@@ -27,28 +28,32 @@ export class LoginService {
       note: '',
       password: 'fokou',
       role: 'user',
-      filliere:[]
+      filliere_choisir:[],
+      filliere_admi:null
     },
     {
       username: 'prospere',
       note: '',
       password: 'prospere',
       role: 'admin',
-      filliere:[]
+      filliere_choisir:[],
+      filliere_admi:null
     },
     {
       username: 'nana',
       note: '',
       password: 'nana',
       role: 'user',
-      filliere:[]
+      filliere_choisir:[],
+      filliere_admi:null
     },
     {
       username: 'talom',
       note: '',
       password: 'talom',
       role: 'user',
-      filliere:[]
+      filliere_choisir:[],
+      filliere_admi:null
     }
   ];
 

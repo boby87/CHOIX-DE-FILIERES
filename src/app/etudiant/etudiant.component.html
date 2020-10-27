@@ -1,64 +1,39 @@
-<app-hearder></app-hearder>
+<div class="">
+  <!-- Header 1 code -->
+  <nav class="navbar navbar-expand-lg h2-nav"><a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="icon-menu"></span></button>
+    <div class="collapse navbar-collapse hover-dropdown" id="header2">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" (click)="navig(1)"> Etudiants</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="navig(2)">filière</a></li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a class="nav-link">{{loginService.user.username}}</a></li>
+        <li class="nav-item"><a class="btn rounded-pill btn-dark py-2 px-4" routerLink="/login">Sign up</a></li>
+      </ul>
+    </div>
+  </nav> <!-- End Header 1 code -->
+</div>
 
-<div class="container rounded mt-5 bg-white p-md-5">
-  <div class="h2 font-weight-bold">Meetings</div>
+<div class="container rounded mt-5 bg-white p-md-5" *ngIf="nav==1">
+  <div class="h2 font-weight-bold">Liste des admin </div>
   <div class="table-responsive">
     <table class="table">
       <thead>
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Date</th>
-        <th scope="col">Time</th>
-        <th scope="col">Status</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Filiere</th>
       </tr>
       </thead>
       <tbody>
-      <tr class="bg-blue">
-        <td class="pt-2"> <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="">
-          <div class="pl-lg-5 pl-md-3 pl-1 name">Emilia Kollette</div>
-        </td>
-        <td class="pt-3 mt-1">25 Sep 2020</td>
-        <td class="pt-3">11:00 AM</td>
-        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
-        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
-      </tr>
-      <tr id="spacing-row">
-        <td></td>
-      </tr>
-      <tr class="bg-blue">
-        <td class="pt-2"> <img src="https://images.pexels.com/photos/3765114/pexels-photo-3765114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="rounded-circle" alt="">
-          <div class="pl-lg-5 pl-md-3 pl-1 name">Anny Adams</div>
-        </td>
-        <td class="pt-3">26 Sep 2020</td>
-        <td class="pt-3">11:00 AM</td>
-        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
-        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
-      </tr>
-      <tr>
-        <td></td>
-      </tr>
-      <tr class="bg-blue">
-        <td class="pt-2"> <img src="https://images.pexels.com/photos/3779448/pexels-photo-3779448.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="">
-          <div class="pl-lg-5 pl-md-3 pl-1 name">Arnold Linn</div>
-        </td>
-        <td class="pt-3">26 Sep 2020</td>
-        <td class="pt-3">02:00 PM</td>
-        <td class="pt-3"><span class="fa fa-check pl-3"></span></td>
-        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
-      </tr>
-      <tr>
-        <td></td>
-      </tr>
-      <tr class="bg-blue">
-        <td class="pt-2"> <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle" alt="">
-          <div class="pl-lg-5 pl-md-3 pl-1 name">Josh Limosel</div>
-        </td>
-        <td class="pt-3">26 Sep 2020</td>
-        <td class="pt-3">04:00 PM</td>
-        <td class="pt-3"><span class="fa fa-minus pl-3"></span></td>
-        <td class="pt-3"><span class="fa fa-ellipsis-v btn"></span></td>
+      <tr class="bg-blue" *ngFor="let u of loginService.liste_user_admin">
+        <td class="pt-3 mt-1">{{u.username}}</td>
+        <td class="pt-3">{{u.filliere_admi.nom_filiere}}</td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
+
+<app-filliere *ngIf="nav==2"></app-filliere>
